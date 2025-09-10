@@ -1,5 +1,3 @@
 {
-    "environment": {
-        "ngspice": {}
-    }
+    "environment": {}
 }

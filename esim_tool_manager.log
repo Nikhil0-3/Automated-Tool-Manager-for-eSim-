@@ -80,3 +80,16 @@ operable program or batch file.
 2025-09-10 22:47:13,082 - eSimToolManager - INFO - - xyce: Xyce circuit simulator
 2025-09-10 22:47:16,440 - eSimToolManager - INFO - Checking for available updates...
 2025-09-10 22:47:19,555 - eSimToolManager - INFO - - ngspice: Up to date
+2025-09-10 23:13:45,544 - eSimToolManager - INFO - Attempting to install 'kicad'...
+2025-09-10 23:13:45,578 - eSimToolManager - INFO - All tool dependencies are available
+2025-09-10 23:13:45,578 - eSimToolManager - INFO - Installing kicad with command: choco install kicad -y
+2025-09-10 23:15:28,591 - eSimToolManager - INFO - Attempting to uninstall 'ngspice'...
+2025-09-10 23:15:28,703 - eSimToolManager - INFO - Uninstalling ngspice with command: choco uninstall ngspice -y
+2025-09-10 23:15:40,494 - eSimToolManager - INFO - User configuration saved
+2025-09-10 23:15:40,495 - eSimToolManager - INFO - Successfully uninstalled ngspice.
+2025-09-10 23:16:00,140 - eSimToolManager - INFO - Available tools:
+2025-09-10 23:16:00,164 - eSimToolManager - INFO - - ngspice: Ngspice circuit simulator
+2025-09-10 23:16:00,188 - eSimToolManager - INFO - - kicad: KiCad EDA suite
+2025-09-10 23:16:00,220 - eSimToolManager - INFO - - xyce: Xyce circuit simulator
+2025-09-10 23:16:23,798 - eSimToolManager - INFO - Checking for available updates...
+2025-09-10 23:16:23,891 - eSimToolManager - INFO - All tools are up to date.

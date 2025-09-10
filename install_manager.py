@@ -98,7 +98,47 @@ class InstallManager:
         # Set environment variables in user config
         self._save_environment_variables(tool_name, env_vars)
         
-        return True, f"Successfully installed {tool_name}"
+        message = f"Successfully installed {tool_name}."
+        if env_vars:
+            message += f" Please note: to make environment variables permanent, you may need to set them manually or restart your terminal."
+
+        return True, message
+
+    def uninstall_tool(self, tool_name: str) -> Tuple[bool, str]:
+        """
+        Uninstall a tool.
+
+        Args:
+            tool_name: Name of the tool to uninstall.
+
+        Returns:
+            Tuple of (success status, message).
+        """
+        tool_config = self.config_manager.get_tool_config(tool_name)
+        if not tool_config:
+            return False, f"Tool {tool_name} not found in configuration"
+
+        if not self.is_tool_installed(tool_name, tool_config):
+            return True, f"Tool {tool_name} is not installed."
+
+        platform_config = self.config_manager.get_platform_config(tool_config)
+        uninstall_cmd = platform_config.get("uninstall")
+
+        if not uninstall_cmd:
+            return False, f"No uninstall command defined for {tool_name} on this platform."
+
+        logger.info(f"Uninstalling {tool_name} with command: {uninstall_cmd}")
+        result = run_command(uninstall_cmd)
+
+        if result is None:
+            return False, f"Uninstallation of {tool_name} failed."
+
+        # Clean up environment variables from user config
+        if "environment" in self.config_manager.user_config and tool_name in self.config_manager.user_config["environment"]:
+            del self.config_manager.user_config["environment"][tool_name]
+            self.config_manager.save_user_config()
+
+        return True, f"Successfully uninstalled {tool_name}."
     
     def is_tool_installed(self, tool_name: str, tool_config: Dict[str, Any] = None) -> bool:
         """

@@ -42,6 +42,10 @@ def main():
     # 'list' command
     parser_list = subparsers.add_parser("list", help="List all available and installed tools.")
 
+    # 'uninstall' command
+    parser_uninstall = subparsers.add_parser("uninstall", help="Uninstall a tool.")
+    parser_uninstall.add_argument("tool_name", help="The name of the tool to uninstall.")
+
     # 'set-path' command
     parser_path = subparsers.add_parser("set-path", help="Set the base installation directory for tools.")
     parser_path.add_argument("path", help="The new absolute path for tool installations.")
@@ -89,6 +93,14 @@ def main():
             installed_status = " (installed)" if install_manager.is_tool_installed(tool_name, config) else ""
             description = config.get('description', 'No description')
             logger.info(f"- {tool_name}{installed_status}: {description}")
+
+    elif args.command == "uninstall":
+        logger.info(f"Attempting to uninstall '{args.tool_name}'...")
+        success, message = install_manager.uninstall_tool(args.tool_name)
+        if success:
+            logger.info(message)
+        else:
+            logger.error(message)
 
     elif args.command == "set-path":
         logger.info(f"Setting new installation path to '{args.path}'...")

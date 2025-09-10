@@ -13,24 +13,28 @@
         "ubuntu": {
           "install": "sudo apt-get install -y ngspice",
           "update": "sudo apt-get install --only-upgrade -y ngspice",
-          "update_check": "apt list --upgradable | grep ngspice"
+          "update_check": "apt list --upgradable | grep ngspice",
+          "uninstall": "sudo apt-get remove -y ngspice"
         },
         "debian": {
           "install": "sudo apt-get install -y ngspice",
           "update": "sudo apt-get install --only-upgrade -y ngspice",
-          "update_check": "apt list --upgradable | grep ngspice"
+          "update_check": "apt list --upgradable | grep ngspice",
+          "uninstall": "sudo apt-get remove -y ngspice"
         }
       },
       "windows": {
         "install": "choco install ngspice -y",
         "version_check": "ngspice_con.exe --version",
         "update": "choco upgrade ngspice -y",
-        "update_check": "choco outdated ngspice"
+        "update_check": "choco outdated ngspice",
+        "uninstall": "choco uninstall ngspice -y"
       },
       "darwin": {
         "install": "brew install ngspice",
         "update": "brew upgrade ngspice",
-        "update_check": "brew outdated ngspice"
+        "update_check": "brew outdated ngspice",
+        "uninstall": "brew uninstall ngspice"
       }
     },
     "kicad": {
@@ -46,23 +50,27 @@
         "ubuntu": {
           "install": "sudo apt-get install -y kicad",
           "update": "sudo apt-get install --only-upgrade -y kicad",
-          "update_check": "apt list --upgradable | grep kicad"
+          "update_check": "apt list --upgradable | grep kicad",
+          "uninstall": "sudo apt-get remove -y kicad"
         },
         "debian": {
           "install": "sudo apt-get install -y kicad",
           "update": "sudo apt-get install --only-upgrade -y kicad",
-          "update_check": "apt list --upgradable | grep kicad"
+          "update_check": "apt list --upgradable | grep kicad",
+          "uninstall": "sudo apt-get remove -y kicad"
         }
       },
       "windows": {
         "install": "choco install kicad -y",
         "update": "choco upgrade kicad -y",
-        "update_check": "choco outdated kicad"
+        "update_check": "choco outdated kicad",
+        "uninstall": "choco uninstall kicad -y"
       },
       "darwin": {
         "install": "brew install kicad",
         "update": "brew upgrade kicad",
-        "update_check": "brew outdated kicad"
+        "update_check": "brew outdated kicad",
+        "uninstall": "brew uninstall kicad"
       }
     },
     "xyce": {
@@ -78,13 +86,15 @@
         "ubuntu": {
           "install": "sudo apt-get install -y xyce-serial",
           "update": "sudo apt-get install --only-upgrade -y xyce-serial",
-          "update_check": "apt list --upgradable | grep xyce"
+          "update_check": "apt list --upgradable | grep xyce",
+          "uninstall": "sudo apt-get remove -y xyce-serial"
         }
       },
       "windows": {
         "install": "choco install xyce -y",
         "update": "choco upgrade xyce -y",
-        "update_check": "choco outdated xyce"
+        "update_check": "choco outdated xyce",
+        "uninstall": "choco uninstall xyce -y"
       }
     }
   }

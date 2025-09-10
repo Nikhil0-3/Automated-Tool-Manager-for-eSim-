@@ -115,10 +115,12 @@ class ConfigManager:
         from utils import get_linux_distro
         
         if SYSTEM in tool_config:
-            return tool_config[SYSTEM]
+            # This handles 'windows' and 'darwin' directly
+            return tool_config.get(SYSTEM, {})
         elif SYSTEM == "linux":
             distro = get_linux_distro()
-            if distro and distro in tool_config:
-                return tool_config[distro]
+            linux_config = tool_config.get("linux", {})
+            # Return distro-specific config, or the general linux config if available
+            return linux_config.get(distro, linux_config)
         
-        return tool_config.get("default", {})
+        return {}

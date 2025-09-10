@@ -89,3 +89,8 @@ With the setup complete, you can now use the tool manager from your activated vi
     ```powershell
     python main.py update
     ```
+
+*   **Uninstall a tool**:
+    ```powershell
+    python main.py uninstall ngspice
+    ```
