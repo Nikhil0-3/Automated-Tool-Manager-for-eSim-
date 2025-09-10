@@ -1,15 +1,24 @@
 """
 Dependency checking for the eSim Tool Manager
 """
+import distro
 
 import shutil
 from typing import Dict, List, Tuple, Any
 
 from constants import SYSTEM, PACKAGE_MANAGERS
-from utils import is_tool_available, get_linux_distro, run_command
+from utils import is_tool_available, run_command
 from logger import logger
 
+def get_linux_distro() -> str:
+    """Get Linux distribution ID using the 'distro' library."""
+    if SYSTEM != "linux":
+        return ""
+    return distro.id()
+
 class DependencyChecker:
+    """Checks for and manages tool and system dependencies."""
+
     def __init__(self):
         self.system_dependencies = self.get_system_dependencies()
         self.available_package_manager = self.get_package_manager()
@@ -17,9 +26,6 @@ class DependencyChecker:
     def get_system_dependencies(self) -> List[str]:
         """
         Get system-level dependencies based on OS
-        
-        Returns:
-            List of required system dependencies
         """
         if SYSTEM == "linux":
             return ["curl", "wget", "tar", "gzip"]
@@ -32,9 +38,6 @@ class DependencyChecker:
     def get_package_manager(self) -> str:
         """
         Get the available package manager for the system
-        
-        Returns:
-            Name of the package manager or empty string if not available
         """
         if SYSTEM == "windows":
             if is_tool_available("choco"):
@@ -54,9 +57,6 @@ class DependencyChecker:
     def check_system_dependencies(self) -> Tuple[bool, List[str]]:
         """
         Check if system dependencies are available
-        
-        Returns:
-            Tuple of (success status, list of missing dependencies)
         """
         missing = []
         for dep in self.system_dependencies:
@@ -73,12 +73,6 @@ class DependencyChecker:
     def check_tool_dependencies(self, tool_config: Dict[str, Any]) -> Tuple[bool, List[str]]:
         """
         Check dependencies for a specific tool
-        
-        Args:
-            tool_config: Tool configuration dictionary
-        
-        Returns:
-            Tuple of (success status, list of missing dependencies)
         """
         dependencies = tool_config.get("dependencies", [])
         missing = []
@@ -97,12 +91,6 @@ class DependencyChecker:
     def install_system_dependencies(self, dependencies: List[str]) -> bool:
         """
         Install system dependencies using the available package manager
-        
-        Args:
-            dependencies: List of dependencies to install
-        
-        Returns:
-            Boolean indicating success
         """
         if not self.available_package_manager:
             logger.error("No package manager available to install dependencies")

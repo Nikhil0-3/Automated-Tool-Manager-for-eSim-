@@ -1,1 +1,2 @@
 # Python dependencies for eSim Tool Manager
+distro>=1.7.0

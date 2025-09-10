@@ -15,20 +15,14 @@ from dependency_checker import DependencyChecker
 from logger import logger
 
 class InstallManager:
+    """Handles the installation, uninstallation, and status checking of tools."""
+
     def __init__(self, config_manager: ConfigManager):
         self.config_manager = config_manager
         self.dependency_checker = DependencyChecker()
     
     def install_tool(self, tool_name: str) -> Tuple[bool, str]:
-        """
-        Install a tool
-        
-        Args:
-            tool_name: Name of the tool to install
-        
-        Returns:
-            Tuple of (success status, message)
-        """
+        """Install a tool, checking for dependencies and admin rights."""
         # On Windows, check for admin rights if choco is used, as it's often required.
         if platform.system().lower() == "windows":
             try:
@@ -106,13 +100,7 @@ class InstallManager:
 
     def uninstall_tool(self, tool_name: str) -> Tuple[bool, str]:
         """
-        Uninstall a tool.
-
-        Args:
-            tool_name: Name of the tool to uninstall.
-
-        Returns:
-            Tuple of (success status, message).
+        Uninstall a tool using its defined uninstall command.
         """
         tool_config = self.config_manager.get_tool_config(tool_name)
         if not tool_config:
@@ -142,14 +130,7 @@ class InstallManager:
     
     def is_tool_installed(self, tool_name: str, tool_config: Dict[str, Any] = None) -> bool:
         """
-        Check if a tool is installed
-        
-        Args:
-            tool_name: Name of the tool to check
-            tool_config: Tool configuration (optional)
-        
-        Returns:
-            Boolean indicating if the tool is installed
+        Check if a tool is installed by checking its version or executable path.
         """
         if tool_config is None:
             tool_config = self.config_manager.get_tool_config(tool_name)
@@ -188,13 +169,7 @@ class InstallManager:
     
     def prompt_install_dependencies(self, dependencies: List[str]) -> bool:
         """
-        Prompt user to install missing dependencies
-        
-        Args:
-            dependencies: List of missing dependencies
-        
-        Returns:
-            Boolean indicating if user wants to install dependencies
+        Prompt the user to install missing dependencies.
         """
         try:
             from ui import prompt_yes_no
@@ -207,11 +182,7 @@ class InstallManager:
     
     def _save_environment_variables(self, tool_name: str, env_vars: Dict[str, str]):
         """
-        Save environment variables to user config
-        
-        Args:
-            tool_name: Name of the tool
-            env_vars: Environment variables to save
+        Save tool-specific environment variables to the user config file.
         """
         if "environment" not in self.config_manager.user_config:
             self.config_manager.user_config["environment"] = {}

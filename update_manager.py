@@ -10,17 +10,14 @@ from utils import run_command
 from logger import logger
 
 class UpdateManager:
+    """Manages checking for and applying updates to installed tools."""
+
     def __init__(self, config_manager: ConfigManager, install_manager: InstallManager):
         self.config_manager = config_manager
         self.install_manager = install_manager
     
     def check_updates(self) -> Dict[str, str]:
-        """
-        Check for available updates for all installed tools
-        
-        Returns:
-            Dictionary with tool names and update status
-        """
+        """Check for available updates for all installed tools."""
         updates = {}
         tools = self.config_manager.get_all_tools()
         
@@ -33,15 +30,7 @@ class UpdateManager:
         return updates
     
     def update_tool(self, tool_name: str) -> Tuple[bool, str]:
-        """
-        Update a tool
-        
-        Args:
-            tool_name: Name of the tool to update
-        
-        Returns:
-            Tuple of (success status, message)
-        """
+        """Update a single tool using its defined update command."""
         # Get tool configuration
         tool_config = self.config_manager.get_tool_config(tool_name)
         if not tool_config:
@@ -71,10 +60,7 @@ class UpdateManager:
     
     def update_all_tools(self) -> Dict[str, Tuple[bool, str]]:
         """
-        Update all installed tools
-        
-        Returns:
-            Dictionary with tool names and update results
+        Update all currently installed tools.
         """
         results = {}
         tools = self.config_manager.get_all_tools()
@@ -88,14 +74,7 @@ class UpdateManager:
     
     def _check_tool_update(self, tool_name: str, tool_config: Dict[str, Any]) -> str:
         """
-        Check for updates for a specific tool
-        
-        Args:
-            tool_name: Name of the tool to check
-            tool_config: Tool configuration
-        
-        Returns:
-            Update status message or empty string if no update available
+        Check for updates for a specific tool using its update_check command.
         """
         # Get platform-specific configuration
         platform_config = self.config_manager.get_platform_config(tool_config)
