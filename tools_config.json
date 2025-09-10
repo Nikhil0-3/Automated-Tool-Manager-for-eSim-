@@ -1,0 +1,91 @@
+{
+  "tools": {
+    "ngspice": {
+      "description": "Ngspice circuit simulator",
+      "executable": "ngspice",
+      "version_check": "ngspice --version",
+      "dependencies": ["make", "gcc"],
+      "environment": {
+        "NGSPICE_HOME": "{install_path}/ngspice"
+      },
+      "add_to_path": true,
+      "linux": {
+        "ubuntu": {
+          "install": "sudo apt-get install -y ngspice",
+          "update": "sudo apt-get install --only-upgrade -y ngspice",
+          "update_check": "apt list --upgradable | grep ngspice"
+        },
+        "debian": {
+          "install": "sudo apt-get install -y ngspice",
+          "update": "sudo apt-get install --only-upgrade -y ngspice",
+          "update_check": "apt list --upgradable | grep ngspice"
+        }
+      },
+      "windows": {
+        "install": "choco install ngspice -y",
+        "version_check": "ngspice_con.exe --version",
+        "update": "choco upgrade ngspice -y",
+        "update_check": "choco outdated ngspice"
+      },
+      "darwin": {
+        "install": "brew install ngspice",
+        "update": "brew upgrade ngspice",
+        "update_check": "brew outdated ngspice"
+      }
+    },
+    "kicad": {
+      "description": "KiCad EDA suite",
+      "executable": "kicad",
+      "version_check": "kicad --version",
+      "dependencies": [],
+      "environment": {
+        "KICAD_HOME": "{install_path}/kicad"
+      },
+      "add_to_path": true,
+      "linux": {
+        "ubuntu": {
+          "install": "sudo apt-get install -y kicad",
+          "update": "sudo apt-get install --only-upgrade -y kicad",
+          "update_check": "apt list --upgradable | grep kicad"
+        },
+        "debian": {
+          "install": "sudo apt-get install -y kicad",
+          "update": "sudo apt-get install --only-upgrade -y kicad",
+          "update_check": "apt list --upgradable | grep kicad"
+        }
+      },
+      "windows": {
+        "install": "choco install kicad -y",
+        "update": "choco upgrade kicad -y",
+        "update_check": "choco outdated kicad"
+      },
+      "darwin": {
+        "install": "brew install kicad",
+        "update": "brew upgrade kicad",
+        "update_check": "brew outdated kicad"
+      }
+    },
+    "xyce": {
+      "description": "Xyce circuit simulator",
+      "executable": "Xyce",
+      "version_check": "Xyce --version",
+      "dependencies": ["cmake", "gcc", "gfortran"],
+      "environment": {
+        "XYCE_HOME": "{install_path}/xyce"
+      },
+      "add_to_path": true,
+      "linux": {
+        "ubuntu": {
+          "install": "sudo apt-get install -y xyce-serial",
+          "update": "sudo apt-get install --only-upgrade -y xyce-serial",
+          "update_check": "apt list --upgradable | grep xyce"
+        }
+      },
+      "windows": {
+        "install": "choco install xyce -y",
+        "update": "choco upgrade xyce -y",
+        "update_check": "choco outdated xyce"
+      }
+    }
+  }
+}

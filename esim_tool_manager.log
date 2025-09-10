@@ -1,0 +1,82 @@
+2025-09-10 22:26:20,982 - eSimToolManager - ERROR - Invalid JSON in configuration file tools_config.json: Expecting value: line 1 column 1 (char 0)
+2025-09-10 22:26:20,982 - eSimToolManager - WARNING - Configuration file user_config.json not found
+2025-09-10 22:26:20,998 - eSimToolManager - INFO - Available tools:
+2025-09-10 22:27:17,765 - eSimToolManager - WARNING - Configuration file user_config.json not found
+2025-09-10 22:27:17,787 - eSimToolManager - INFO - Available tools:
+2025-09-10 22:27:17,823 - eSimToolManager - ERROR - Command failed: ngspice --version
+2025-09-10 22:27:17,823 - eSimToolManager - ERROR - Error: Command 'ngspice --version' returned non-zero exit status 1.
+2025-09-10 22:27:17,823 - eSimToolManager - ERROR - Stderr: 'ngspice' is not recognized as an internal or external command,
+operable program or batch file.
+
+2025-09-10 22:27:17,832 - eSimToolManager - INFO - - ngspice: Ngspice circuit simulator
+2025-09-10 22:27:17,863 - eSimToolManager - ERROR - Command failed: kicad --version
+2025-09-10 22:27:17,863 - eSimToolManager - ERROR - Error: Command 'kicad --version' returned non-zero exit status 1.
+2025-09-10 22:27:17,870 - eSimToolManager - ERROR - Stderr: 'kicad' is not recognized as an internal or external command,
+operable program or batch file.
+
+2025-09-10 22:27:17,873 - eSimToolManager - INFO - - kicad: KiCad EDA suite
+2025-09-10 22:27:17,899 - eSimToolManager - ERROR - Command failed: Xyce --version
+2025-09-10 22:27:17,899 - eSimToolManager - ERROR - Error: Command 'Xyce --version' returned non-zero exit status 1.
+2025-09-10 22:27:17,904 - eSimToolManager - ERROR - Stderr: 'Xyce' is not recognized as an internal or external command,
+operable program or batch file.
+
+2025-09-10 22:27:17,905 - eSimToolManager - INFO - - xyce: Xyce circuit simulator
+2025-09-10 22:28:40,861 - eSimToolManager - WARNING - Configuration file user_config.json not found
+2025-09-10 22:28:40,872 - eSimToolManager - INFO - Available tools:
+2025-09-10 22:28:40,896 - eSimToolManager - ERROR - Command failed: ngspice --version
+2025-09-10 22:28:40,896 - eSimToolManager - ERROR - Error: Command 'ngspice --version' returned non-zero exit status 1.
+2025-09-10 22:28:40,896 - eSimToolManager - ERROR - Stderr: 'ngspice' is not recognized as an internal or external command,
+operable program or batch file.
+2025-09-10 22:28:40,920 - eSimToolManager - INFO - - ngspice: Ngspice circuit simulator
+2025-09-10 22:28:40,953 - eSimToolManager - ERROR - Command failed: kicad --version
+2025-09-10 22:28:40,954 - eSimToolManager - ERROR - Error: Command 'kicad --version' returned non-zero exit status 1.
+2025-09-10 22:28:40,954 - eSimToolManager - ERROR - Stderr: 'kicad' is not recognized as an internal or external command,
+operable program or batch file.
+2025-09-10 22:28:40,971 - eSimToolManager - INFO - - kicad: KiCad EDA suite
+2025-09-10 22:28:40,995 - eSimToolManager - ERROR - Command failed: Xyce --version
+2025-09-10 22:28:40,995 - eSimToolManager - ERROR - Error: Command 'Xyce --version' returned non-zero exit status 1.
+2025-09-10 22:28:40,995 - eSimToolManager - ERROR - Stderr: 'Xyce' is not recognized as an internal or external command,
+operable program or batch file.
+2025-09-10 22:28:41,018 - eSimToolManager - INFO - - xyce: Xyce circuit simulator
+2025-09-10 22:30:57,524 - eSimToolManager - WARNING - Configuration file user_config.json not found
+2025-09-10 22:30:57,534 - eSimToolManager - INFO - Available tools:
+2025-09-10 22:30:57,552 - eSimToolManager - INFO - - ngspice: Ngspice circuit simulator
+2025-09-10 22:30:57,579 - eSimToolManager - INFO - - kicad: KiCad EDA suite
+2025-09-10 22:30:57,597 - eSimToolManager - INFO - - xyce: Xyce circuit simulator
+2025-09-10 22:32:26,477 - eSimToolManager - WARNING - Configuration file user_config.json not found
+2025-09-10 22:32:26,500 - eSimToolManager - INFO - Attempting to install 'ngspice'...
+2025-09-10 22:32:26,545 - eSimToolManager - WARNING - Missing dependencies for tool: make
+2025-09-10 22:32:26,550 - eSimToolManager - ERROR - Missing dependencies: make
+2025-09-10 22:34:39,030 - eSimToolManager - WARNING - Configuration file user_config.json not found
+2025-09-10 22:34:39,047 - eSimToolManager - INFO - Attempting to install 'ngspice'...
+2025-09-10 22:34:39,078 - eSimToolManager - WARNING - Missing dependencies for tool: make
+2025-09-10 22:34:42,176 - eSimToolManager - INFO - Installing dependencies: make
+2025-09-10 22:35:44,109 - eSimToolManager - ERROR - Command failed: choco install make -y
+2025-09-10 22:35:44,109 - eSimToolManager - ERROR - Error: Command 'choco install make -y' returned non-zero exit status 1.
+2025-09-10 22:35:44,109 - eSimToolManager - ERROR - Failed to install dependencies: make
+2025-09-10 22:37:02,441 - eSimToolManager - WARNING - Configuration file user_config.json not found
+2025-09-10 22:37:02,441 - eSimToolManager - INFO - Attempting to install 'ngspice'...
+2025-09-10 22:37:02,457 - eSimToolManager - ERROR - Administrator privileges are required to install tools with Chocolatey. Please run the terminal as an administrator.
+2025-09-10 22:39:20,817 - eSimToolManager - WARNING - Configuration file user_config.json not found
+2025-09-10 22:39:20,837 - eSimToolManager - INFO - Attempting to install 'ngspice'...
+2025-09-10 22:39:20,881 - eSimToolManager - WARNING - Missing dependencies for tool: make
+2025-09-10 22:39:24,264 - eSimToolManager - INFO - Installing dependencies: make
+2025-09-10 22:39:31,096 - eSimToolManager - INFO - Installing ngspice with command: choco install ngspice -y
+2025-09-10 22:39:47,263 - eSimToolManager - INFO - User configuration saved
+2025-09-10 22:39:47,263 - eSimToolManager - INFO - Successfully installed ngspice
+2025-09-10 22:40:56,845 - eSimToolManager - INFO - Available tools:
+2025-09-10 22:41:12,898 - eSimToolManager - INFO - - ngspice (installed): Ngspice circuit simulator
+2025-09-10 22:41:12,948 - eSimToolManager - INFO - - kicad: KiCad EDA suite
+2025-09-10 22:41:12,975 - eSimToolManager - INFO - - xyce: Xyce circuit simulator
+2025-09-10 22:41:45,466 - eSimToolManager - INFO - Available tools:
+2025-09-10 22:41:51,590 - eSimToolManager - INFO - - ngspice (installed): Ngspice circuit simulator
+2025-09-10 22:41:51,647 - eSimToolManager - INFO - - kicad: KiCad EDA suite
+2025-09-10 22:41:51,706 - eSimToolManager - INFO - - xyce: Xyce circuit simulator
+2025-09-10 22:42:43,001 - eSimToolManager - INFO - Checking for available updates...
+2025-09-10 22:43:10,273 - eSimToolManager - INFO - - ngspice: Up to date
+2025-09-10 22:47:12,684 - eSimToolManager - INFO - Available tools:
+2025-09-10 22:47:13,021 - eSimToolManager - INFO - - ngspice (installed): Ngspice circuit simulator
+2025-09-10 22:47:13,052 - eSimToolManager - INFO - - kicad: KiCad EDA suite
+2025-09-10 22:47:13,082 - eSimToolManager - INFO - - xyce: Xyce circuit simulator
+2025-09-10 22:47:16,440 - eSimToolManager - INFO - Checking for available updates...
+2025-09-10 22:47:19,555 - eSimToolManager - INFO - - ngspice: Up to date

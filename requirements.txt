@@ -1,0 +1,2 @@
+# Python dependencies for eSim Tool Manager
+requests>=2.25.0
